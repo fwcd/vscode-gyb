@@ -9,17 +9,33 @@
   "categories": [
     "Programming Languages"
   ],
+  "scripts": {
+    "package-extension": "vsce package",
+    "publish-extension": "vsce publish"
+  },
   "contributes": {
-    "languages": [{
-      "id": "gyb",
-      "aliases": ["GYB", "gyb"],
-      "extensions": [".gyb"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "gyb",
-      "scopeName": "source.gyb",
-      "path": "./syntaxes/gyb.tmLanguage.json"
-    }]
+    "languages": [
+      {
+        "id": "gyb",
+        "aliases": [
+          "GYB",
+          "gyb"
+        ],
+        "extensions": [
+          ".gyb"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "gyb",
+        "scopeName": "source.gyb",
+        "path": "./syntaxes/gyb.tmLanguage.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "vsce": "^2.9.1"
   }
 }

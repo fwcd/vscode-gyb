@@ -2,3 +2,6 @@
 .vscode-test/**
 .gitignore
 vsc-extension-quickstart.md
+
+# Since the extension is only syntax, we don't need these
+node_modules/**
