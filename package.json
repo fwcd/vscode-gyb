@@ -2,6 +2,7 @@
   "name": "gyb",
   "displayName": "GYB",
   "description": "GYB Syntax Highlighting",
+  "publisher": "fwcd",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.67.0"
