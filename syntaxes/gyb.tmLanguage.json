@@ -9,27 +9,55 @@
       "include": "#control"
     },
     {
-      "include": "#expr"
+      "include": "#expression"
     }
   ],
   "repository": {
     "block": {
+      "name": "meta.template.block.gyb",
       "begin": "%{",
       "end": "}%",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.template-expression.begin"
+        }
+      },
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.template-expression.end"
+        }
+      },
       "patterns": [{
         "include": "source.python"
       }]
     },
     "control": {
-      "begin": "^%\\s",
+      "name": "meta.template.control.gyb",
+      "begin": "^(%)\\s",
       "end": "$",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.template-expression.begin"
+        }
+      },
       "patterns": [{
         "include": "source.python"
       }]
     },
-    "expr": {
+    "expression": {
+      "name": "meta.template.expression.gyb",
       "begin": "\\${",
       "end": "}",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.template-expression.begin"
+        }
+      },
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.template-expression.end"
+        }
+      },
       "patterns": [{
         "include": "source.python"
       }]
