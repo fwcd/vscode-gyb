@@ -3,29 +3,26 @@
   "name": "GYB",
   "patterns": [
     {
-      "include": "#keywords"
+      "include": "#block"
     },
     {
-      "include": "#strings"
+      "include": "#control"
     }
   ],
   "repository": {
-    "keywords": {
+    "block": {
+      "begin": "%{",
+      "end": "}%",
       "patterns": [{
-        "name": "keyword.control.gyb",
-        "match": "\\b(if|while|for|return)\\b"
+        "include": "source.python"
       }]
     },
-    "strings": {
-      "name": "string.quoted.double.gyb",
-      "begin": "\"",
-      "end": "\"",
-      "patterns": [
-        {
-          "name": "constant.character.escape.gyb",
-          "match": "\\\\."
-        }
-      ]
+    "control": {
+      "begin": "^%\\s",
+      "end": "$",
+      "patterns": [{
+        "include": "source.python"
+      }]
     }
   },
   "scopeName": "source.gyb"
