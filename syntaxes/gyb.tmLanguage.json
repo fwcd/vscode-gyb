@@ -1,0 +1,32 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "GYB",
+  "patterns": [
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#strings"
+    }
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [{
+        "name": "keyword.control.gyb",
+        "match": "\\b(if|while|for|return)\\b"
+      }]
+    },
+    "strings": {
+      "name": "string.quoted.double.gyb",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.gyb",
+          "match": "\\\\."
+        }
+      ]
+    }
+  },
+  "scopeName": "source.gyb"
+}

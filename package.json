@@ -1,0 +1,25 @@
+{
+  "name": "gyb",
+  "displayName": "GYB",
+  "description": "GYB Syntax Highlighting",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.67.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "gyb",
+      "aliases": ["GYB", "gyb"],
+      "extensions": [".gyb"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "gyb",
+      "scopeName": "source.gyb",
+      "path": "./syntaxes/gyb.tmLanguage.json"
+    }]
+  }
+}
