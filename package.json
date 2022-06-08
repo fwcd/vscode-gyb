@@ -30,6 +30,17 @@
           ".gyb"
         ],
         "configuration": "./language-configuration.json"
+      },
+      {
+        "id": "swift-gyb",
+        "aliases": [
+          "Swift GYB",
+          "swift-gyb"
+        ],
+        "extensions": [
+          ".swift.gyb"
+        ],
+        "configuration": "./language-configuration.json"
       }
     ],
     "grammars": [
@@ -37,6 +48,11 @@
         "language": "gyb",
         "scopeName": "source.gyb",
         "path": "./syntaxes/gyb.tmLanguage.json"
+      },
+      {
+        "language": "swift-gyb",
+        "scopeName": "source.swift-gyb",
+        "path": "./syntaxes/swift-gyb.tmLanguage.json"
       }
     ]
   },
