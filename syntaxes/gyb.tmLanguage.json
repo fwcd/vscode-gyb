@@ -33,7 +33,7 @@
     },
     "control": {
       "name": "meta.template.control.gyb",
-      "begin": "^(%)\\s",
+      "begin": "^\\s*(%)\\s",
       "end": "$",
       "beginCaptures": {
         "1": {
