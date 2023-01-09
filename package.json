@@ -1,7 +1,7 @@
 {
   "name": "gyb",
   "displayName": "GYB",
-  "description": "GYB Syntax Highlighting",
+  "description": "Syntax highlighting for the Swift compiler's GYB templates",
   "publisher": "fwcd",
   "version": "0.0.2",
   "engines": {
