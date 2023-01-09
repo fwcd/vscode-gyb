@@ -3,7 +3,7 @@
   "displayName": "GYB",
   "description": "Syntax highlighting for the Swift compiler's GYB templates",
   "publisher": "fwcd",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.67.0"
   },
