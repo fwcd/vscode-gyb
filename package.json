@@ -15,6 +15,7 @@
     "url": "https://github.com/fwcd/vscode-gyb.git"
   },
   "scripts": {
+    "compile": "echo No compilation needed!",
     "package-extension": "vsce package",
     "publish-extension": "vsce publish"
   },
