@@ -1,0 +1,49 @@
+name: Deploy
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: olegtarasov/get-tag@v2.1
+        id: tag_name
+        with:
+          tagRegex: "v(.*)"
+          tagRegexGroup: 1
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '17'
+      - name: Install dependencies
+        run: npm install
+      - name: Compile extension
+        run: npm run compile
+      - name: Package extension
+        run: npm run package-extension -- -o gyb.vsix
+      - name: Create release
+        uses: actions/create-release@v1
+        id: create_release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ steps.tag_name.outputs.tag }}
+          release_name: Version ${{ steps.tag_name.outputs.tag }}
+          draft: false
+          prerelease: false
+      - name: Upload asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./gyb.vsix
+          asset_name: gyb-${{ steps.tag_name.outputs.tag }}.vsix
+          asset_content_type: application/zip
+      - name: Publish extension to VSC marketplace
+        run: npm run publish-extension -- -p $VSC_TOKEN
+        env:
+          VSC_TOKEN: ${{ secrets.VSC_TOKEN }}
