@@ -1,0 +1,14 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Swift GYB",
+  "patterns": [
+    {
+      "include": "source.gyb"
+    },
+    {
+      "include": "source.swift",
+      "comment": "TODO: The Swift grammar matches entire bodies (e.g. as delimited by { ... }), causing our gyb syntax to not be considered, e.g. if a gyb construct appears within a Swift code block"
+    }
+  ],
+  "scopeName": "source.swift-gyb"
+}
